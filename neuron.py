@@ -11,4 +11,5 @@ class Neuron:
         # Weight inputs, add bias, use activation function
         total = np.dot(self.weights, inputs) + self.bias
         return sigmoid(total)
-
+    
+    
