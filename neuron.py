@@ -13,3 +13,4 @@ class Neuron:
         return sigmoid(total)
     
     
+

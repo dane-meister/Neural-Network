@@ -14,3 +14,26 @@ def deriv_sigmoid(x):
 def relu(x):
     return np.maximum(0, x)
 
+
+def deriv_relu(x):
+    return np.where(x <= 0, 0, 1)
+
+
+def tanh(x):
+    return np.tanh(x)
+
+
+def deriv_tanh(x):
+    return 1 - np.tanh(x) ** 2
+
+
+def softmax(x):
+    # Numerically stable softmax
+    exps = np.exp(x - x.max())
+    return exps / exps.sum()
+
+
+def deriv_softmax(x):
+    # Derivative of softmax is softmax * (1 - softmax)
+    return softmax(x) * (1 - softmax(x))
+
